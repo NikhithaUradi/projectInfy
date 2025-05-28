@@ -1,0 +1,226 @@
+real-estate-platform/
+├── README.md
+├── package.json
+├── package-lock.json
+├── next.config.js
+├── tsconfig.json
+├── tailwind.config.js
+├── .gitignore
+├── .env.local
+│
+├── public/
+│   ├── favicon.ico
+│   ├── logo.png
+│   ├── images/
+│   │   ├── hero-bg.jpg
+│   │   ├── property-placeholder.jpg
+│   │   └── avatars/
+│   │       ├── agent-1.jpg
+│   │       ├── agent-2.jpg
+│   │       └── default-avatar.png
+│   └── icons/
+│       ├── home.svg
+│       ├── search.svg
+│       └── heart.svg
+│
+├── app/
+│   ├── layout.tsx                 # Root layout with providers
+│   ├── page.tsx                   # Main app component with routing
+│   ├── loading.tsx                # Loading component
+│   ├── globals.css                # Global styles
+│   │
+│   ├── components/                # Reusable UI components
+│   │   ├── Navbar.tsx            # Navigation bar
+│   │   ├── Footer.tsx            # Footer component
+│   │   ├── PropertyCard.tsx      # Property display card
+│   │   ├── SearchFilters.tsx     # Search filter component
+│   │   ├── MessageBubble.tsx     # Chat message component
+│   │   ├── NotificationItem.tsx  # Notification display
+│   │   ├── LoadingSpinner.tsx    # Loading indicator
+│   │   ├── Modal.tsx             # Reusable modal
+│   │   ├── Pagination.tsx        # Pagination component
+│   │   ├── ImageGallery.tsx      # Property image gallery
+│   │   ├── ContactForm.tsx       # Contact form component
+│   │   ├── PriceRange.tsx        # Price range slider
+│   │   ├── PropertyStats.tsx     # Property statistics
+│   │   ├── UserAvatar.tsx        # User avatar component
+│   │   ├── Badge.tsx             # Status badges
+│   │   ├── Breadcrumb.tsx        # Navigation breadcrumb
+│   │   └── ui/                   # Basic UI components
+│   │       ├── Button.tsx
+│   │       ├── Input.tsx
+│   │       ├── Select.tsx
+│   │       ├── Checkbox.tsx
+│   │       ├── Radio.tsx
+│   │       ├── Textarea.tsx
+│   │       ├── Card.tsx
+│   │       ├── Alert.tsx
+│   │       ├── Tooltip.tsx
+│   │       └── Dropdown.tsx
+│   │
+│   ├── pages/                     # Main application pages
+│   │   ├── Home.tsx              # Landing page
+│   │   ├── Login.tsx             # User login
+│   │   ├── Register.tsx          # User registration
+│   │   ├── Dashboard.tsx         # User dashboard
+│   │   ├── PropertySearch.tsx    # Property search & results
+│   │   ├── PropertyDetails.tsx   # Individual property view
+│   │   ├── PropertyListing.tsx   # Create/edit property listing
+│   │   ├── Messages.tsx          # Messaging interface
+│   │   ├── Profile.tsx           # User profile management
+│   │   ├── Favorites.tsx         # Saved properties
+│   │   ├── Reports.tsx           # Analytics & reports
+│   │   ├── Settings.tsx          # User settings
+│   │   ├── Help.tsx              # Help & support
+│   │   ├── About.tsx             # About page
+│   │   ├── Contact.tsx           # Contact page
+│   │   ├── Terms.tsx             # Terms of service
+│   │   ├── Privacy.tsx           # Privacy policy
+│   │   ├── ForgotPassword.tsx    # Password reset
+│   │   ├── ResetPassword.tsx     # Password reset form
+│   │   ├── VerifyEmail.tsx       # Email verification
+│   │   ├── PropertyComparison.tsx # Property comparison
+│   │   ├── AgentProfile.tsx      # Agent public profile
+│   │   ├── SearchResults.tsx     # Search results page
+│   │   ├── PropertyMap.tsx       # Map view of properties
+│   │   ├── Notifications.tsx     # Notifications center
+│   │   └── NotFound.tsx          # 404 error page
+│   │
+│   ├── contexts/                  # React Context providers
+│   │   ├── AuthContext.tsx       # Authentication state
+│   │   ├── PropertyContext.tsx   # Property data management
+│   │   ├── NotificationContext.tsx # Notifications state
+│   │   ├── ThemeContext.tsx      # Theme/dark mode
+│   │   ├── SearchContext.tsx     # Search state
+│   │   ├── ChatContext.tsx       # Messaging state
+│   │   ├── FavoritesContext.tsx  # Favorites management
+│   │   └── SettingsContext.tsx   # User settings
+│   │
+│   ├── hooks/                     # Custom React hooks
+│   │   ├── useAuth.ts            # Authentication hook
+│   │   ├── useProperty.ts        # Property operations
+│   │   ├── useNotifications.ts   # Notifications hook
+│   │   ├── useLocalStorage.ts    # Local storage hook
+│   │   ├── useDebounce.ts        # Debounce hook
+│   │   ├── useApi.ts             # API calls hook
+│   │   ├── usePagination.ts      # Pagination hook
+│   │   ├── useSearch.ts          # Search functionality
+│   │   ├── useGeolocation.ts     # Location services
+│   │   ├── useImageUpload.ts     # Image upload hook
+│   │   ├── useWebSocket.ts       # Real-time messaging
+│   │   ├── useForm.ts            # Form handling
+│   │   ├── useModal.ts           # Modal management
+│   │   └── useTheme.ts           # Theme switching
+│   │
+│   ├── services/                  # API and external services
+│   │   ├── api.ts                # Base API configuration
+│   │   ├── authService.ts        # Authentication API
+│   │   ├── propertyService.ts    # Property CRUD operations
+│   │   ├── userService.ts        # User management API
+│   │   ├── messageService.ts     # Messaging API
+│   │   ├── notificationService.ts # Notifications API
+│   │   ├── uploadService.ts      # File upload service
+│   │   ├── geocodingService.ts   # Address geocoding
+│   │   ├── emailService.ts       # Email notifications
+│   │   ├── analyticsService.ts   # Analytics tracking
+│   │   ├── paymentService.ts     # Payment processing
+│   │   └── reportService.ts      # Report generation
+│   │
+│   ├── utils/                     # Utility functions
+│   │   ├── constants.ts          # App constants
+│   │   ├── helpers.ts            # Helper functions
+│   │   ├── formatters.ts         # Data formatting
+│   │   ├── validators.ts         # Form validation
+│   │   ├── dateUtils.ts          # Date manipulation
+│   │   ├── priceUtils.ts         # Price formatting
+│   │   ├── imageUtils.ts         # Image processing
+│   │   ├── urlUtils.ts           # URL manipulation
+│   │   ├── storageUtils.ts       # Storage utilities
+│   │   ├── errorUtils.ts         # Error handling
+│   │   ├── authUtils.ts          # Auth utilities
+│   │   └── apiUtils.ts           # API utilities
+│   │
+│   ├── types/                     # TypeScript type definitions
+│   │   ├── index.ts              # Main type exports
+│   │   ├── auth.ts               # Authentication types
+│   │   ├── property.ts           # Property types
+│   │   ├── user.ts               # User types
+│   │   ├── message.ts            # Messaging types
+│   │   ├── notification.ts       # Notification types
+│   │   ├── api.ts                # API response types
+│   │   ├── form.ts               # Form types
+│   │   ├── search.ts             # Search types
+│   │   ├── report.ts             # Report types
+│   │   └── common.ts             # Common types
+│   │
+│   ├── styles/                    # Styling files
+│   │   ├── globals.css           # Global styles
+│   │   ├── components.css        # Component styles
+│   │   ├── pages.css             # Page-specific styles
+│   │   ├── utilities.css         # Utility classes
+│   │   ├── variables.css         # CSS variables
+│   │   ├── responsive.css        # Responsive styles
+│   │   ├── animations.css        # CSS animations
+│   │   ├── bootstrap-custom.css  # Bootstrap customizations
+│   │   └── themes/               # Theme files
+│   │       ├── light.css
+│   │       ├── dark.css
+│   │       └── high-contrast.css
+│   │
+│   ├── config/                    # Configuration files
+│   │   ├── app.ts                # App configuration
+│   │   ├── api.ts                # API endpoints
+│   │   ├── routes.ts             # Route definitions
+│   │   ├── constants.ts          # App constants
+│   │   ├── environment.ts        # Environment variables
+│   │   ├── features.ts           # Feature flags
+│   │   └── validation.ts         # Validation schemas
+│   │
+│   ├── assets/                    # Static assets
+│   │   ├── images/               # Image files
+│   │   │   ├── logos/
+│   │   │   ├── icons/
+│   │   │   ├── backgrounds/
+│   │   │   └── placeholders/
+│   │   ├── fonts/                # Custom fonts
+│   │   └── data/                 # Static data files
+│   │       ├── cities.json
+│   │       ├── property-types.json
+│   │       └── amenities.json
+│   │
+│   ├── lib/                       # Third-party integrations
+│   │   ├── axios.ts              # HTTP client setup
+│   │   ├── socket.ts             # WebSocket setup
+│   │   ├── analytics.ts          # Analytics setup
+│   │   ├── maps.ts               # Maps integration
+│   │   ├── payment.ts            # Payment integration
+│   │   ├── auth0.ts              # Auth0 setup
+│   │   └── firebase.ts           # Firebase setup
+│   │
+│   └── middleware/                # Next.js middleware
+│       ├── auth.ts               # Authentication middleware
+│       ├── cors.ts               # CORS middleware
+│       └── rateLimit.ts          # Rate limiting
+│
+├── docs/                          # Documentation
+│   ├── README.md
+│   ├── SETUP.md
+│   ├── API.md
+│   ├── DEPLOYMENT.md
+│   ├── CONTRIBUTING.md
+│   └── CHANGELOG.md
+│
+├── tests/                         # Test files
+│   ├── __mocks__/                # Mock files
+│   ├── components/               # Component tests
+│   ├── pages/                    # Page tests
+│   ├── hooks/                    # Hook tests
+│   ├── services/                 # Service tests
+│   ├── utils/                    # Utility tests
+│   ├── setup.ts                  # Test setup
+│   └── jest.config.js            # Jest configuration
+│
+└── .vscode/                       # VS Code settings
+    ├── settings.json
+    ├── extensions.json
+    └── launch.json
